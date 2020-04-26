@@ -1,0 +1,15 @@
+{
+  "name": "favartists-tan",
+  "version": "1.0.0",
+  "description": "",
+  "main": "jquery.pagepiling.js",
+  "scripts": {
+    "deploy": "gh-pages -d src" 
+  },
+  "author": "Tan D. Duong",
+  "license": "ISC",
+  "homepage": "https://tandduong.github.io/tan-fav-artists",
+  "dependencies": {
+    "gh-pages": "^2.2.0"
+  }
+}
