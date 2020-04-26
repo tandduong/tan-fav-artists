@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>pagePiling.js plugin - Video Background</title>
+
+	<link href="https://fonts.googleapis.com/css?family=Cabin+Sketch|Lacquer|Patrick+Hand&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="./jquery.pagepiling.css" />
+	<link rel="stylesheet" type="text/css" href="examples.css" />
+	<link rel="stylesheet" type="text/css" href="style.css" />
+
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+
+	<script type="text/javascript" src="jquery.pagepiling.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function() {
+	    	$('#pagepiling').pagepiling({
+	    		menu: '#menu',
+	    		anchors: ['page1', 'page2', 'page3', 'page4'],
+			    sectionsColor: ['#bfda00', '#2ebe21', '#2C3E50', '#51bec4'],
+			    navigation: {
+			    	'position': 'right',
+			   		'tooltips': ['Author', 'Ed Sheeran', '米津玄師', 'Den', 'Passengers', 'BIGBANG']
+			   	},
+			   	afterRender: function(){
+					//playing the video
+					$('video').get(0).play();
+				}
+			});
+	    });
+    </script>
+
+    <style>
+    	/* Centered texts in each section
+		* --------------------------------------- */
+		.section{
+			text-align:center;
+			overflow: hidden;
+		}
+
+		#myVideo{
+			position: absolute;
+			z-index: 4;
+			right: 0;
+			bottom: 0;
+			top:0;
+			right:0;
+			width: 100%;
+			height: 100%;
+			background-size: 100% 100%;
+	 		background-color: black; /* in case the video doesn't fit the whole page*/
+	  		
+	  		background-position: center center;
+	  		background-size: contain;
+	   		object-fit: cover; /*cover video background */
+		}
+
+		/* Layer with position absolute in order to have it over the video
+		* --------------------------------------- */
+		
+		#section0 .layer, #section1 .layer, #section2 .layer, #section3 .layer, #section4 .layer, #section5 .layer{
+			position: relative;
+			z-index: 5;
+			width: 60%;
+			margin: auto;
+			left: 0;
+			top: 25%;
+			height: 100%;
+		}  
+
+		#section0 h3, #section1 h3, #section2 h3, #section3 h3, #section4 h3, #section5 h3{
+			font-family: 'Lacquer';
+			font-size: 50px;
+		}
+
+		#section0 p, #section1 p, #section2 p, #section3 p, #section4 p, #section5 p{
+			font-family: 'Cabin Sketch';
+			font-size: 20px;
+		}
+
+		#section0 h3, #section0 p{
+			color: rgb(186, 241, 56);
+		}
+		
+		#section1 h3, #section1 p{
+			color: rgb(47, 159, 204);
+		}
+
+		#section2 h3, #section2 p{
+			color: rgb(204, 47, 94);
+			
+
+		}
+
+		#section3 h3, #section3 p{
+			color: rgb(84, 204, 47);
+			
+		}
+
+		#section4 h3, #section4 p{
+			color:#fff;
+			
+		}
+
+		#section5 h3, #section5 p{
+			color: rgb(0, 0, 0);
+			
+		}
+
+		.social-media a{
+			font-size: 25px;
+			color: white;
+			margin-top: 0px;
+			text-decoration: none;
+			transition: all .3s;  
+			padding: 10px;
+		}
+
+		.tan-sm a:hover{
+			color: rgb(186, 241, 56);
+		}
+
+		.ed-sm a:hover{
+			color: rgb(47, 159, 204);
+		}
+
+		.kenshi-sm a:hover{
+			color: rgb(204, 47, 94);
+		}
+
+		.den-sm a:hover{
+			color: rgb(84, 204, 47);
+		}
+
+		.pass-sm a:hover{
+			color: gray;
+		}
+
+		.bb-sm a:hover{
+			color: black;
+		}
+
+		#section0{
+			background: url(images/tan.JPG) no-repeat;
+			background-size: cover;
+		}
+
+
+    </style>
+</head>
+<body>
+
+	<div id="pagepiling">
+		<div class="section" id="section0">
+			<div class="layer">
+				<h3>Tan D. Duong</h3>
+				<p>I built this website for the tribute of those singers/songwriters I am a big fan of. Treat this as my personal blog, diary, or whatever you can think of!</p>
+				<div class="social-media tan-sm">
+					<a href="https://www.facebook.com/tdd1912 target="_blank"><i class="fab fa-facebook"></i></a>
+					<a href="https://www.instagram.com/tandduong/" target="_blank"><i class="fab fa-instagram"></i></a>
+					<a href="https://twitter.com/TanDDuong1" target="_blank"><i class="fab fa-twitter"></i></a>
+					<a href="https://github.com/tandduong" target="_blank"><i class="fab fa-github"></i></a>
+					<a href="https://www.linkedin.com/in/tan-duong-84a711174/" target="_blank"><i class="fab fa-linkedin-in"></i></a> 
+					<a href="https://portfolio-tan.herokuapp.com/" target="_blank"><i class="fas fa-user-circle"></i></a>     
+				</div>
+			</div>
+		</div>
+
+
+	    <div class="section" id="section1">
+	    	<video autoplay loop muted id="myVideo">
+                <source src="images/video1.mp4" type="video/mp4">   
+			</video>
+			<div class="layer">
+				<h3>Ed Sheeran</h3>
+				<p>Ed Sheeran is my most favorite singer/songwriter. His music is a great inspiration to me in my pursuit of art. His melody and lyrics truly touch the soul of the audiences around the world.</p>
+				<div class="social-media ed-sm">
+					<a href="https://www.facebook.com/EdSheeranMusic/" target="_blank"><i class="fab fa-facebook"></i></a>
+					<a href="https://www.instagram.com/teddysphotos/" target="_blank"><i class="fab fa-instagram"></i></a>
+					<a href="https://www.youtube.com/user/EdSheeran" target="_blank"><i class="fab fa-youtube"></i></a>
+					<a href="https://twitter.com/edsheeran" target="_blank"><i class="fab fa-twitter"></i></a>     
+				</div>
+			</div>
+		</div>
+		
+		<div class="section" id="section2">
+	    	<video autoplay loop muted id="myVideo">
+                <source src="images/video2.mp4" type="video/mp4">   
+			</video>
+			<div class="layer">
+				<h3>米津玄師</h3>
+				<p>He was the reason of bringing me to J-Pop: The talented singer, producer, illustrator, and dancer. However, Kenshi's music is indeed an unique dish on the table of melody in "The Land of The Raising Sun". An attractive voice and mysterious style are the difference of this artist.</p>
+				<div class="social-media kenshi-sm">
+					<a href="https://www.instagram.com/hachi_08/" target="_blank"><i class="fab fa-instagram"></i></a>
+					<a href="https://www.youtube.com/user/08yakari" target="_blank"><i class="fab fa-youtube"></i></a> 
+					<a href="https://twitter.com/edsheeran" target="_blank"><i class="fab fa-twitter"></i></a>
+					<a href="https://reissuerecords.net" target="_blank"><i class="fas fa-user-circle"></i></a>     
+				</div>
+			</div>
+		</div>
+		
+		<div class="section" id="section3">
+	    	<video autoplay loop muted id="myVideo">
+                <source src="images/video3.mp4" type="video/mp4">   
+			</video>
+			<div class="layer">
+				<h3>Den</h3>
+				<p>If you are fluent in Vietnamese, I'm sure you will be intoxicated by his melody. Even though a rapper, the music that Den pursues has a soft tone and a desire to seek peace and tranquility, away from the noise of life flow. A talented singer in my country: a master of rhytming and a writer of great stories</p>
+				<div class="social-media den-sm">
+					<a href="https://www.facebook.com/denvau/" target="_blank"><i class="fab fa-facebook"></i></a>
+					<a href="https://www.instagram.com/den.vau/" target="_blank"><i class="fab fa-instagram"></i></a>
+					<a href="https://www.youtube.com/channel/UCWu91J5KWEj1bQhCBuGeJxw" target="_blank"><i class="fab fa-youtube"></i></a>     
+				</div>
+			
+			</div>
+		</div>
+		
+		<div class="section" id="section4">
+	    	<video autoplay loop muted id="myVideo">
+                <source src="images/video4.mp4" type="video/mp4">   
+			</video>
+			<div class="layer">
+				<h3>Passengers</h3>
+				<p>He is the writer of the hit "Let Her Go", but never call him as "One Hit Wonder". His miracle guitar and his unique voice will bring us to the sad, soft and poetic songs. Once you listen to Passergers, you'll never escape. He and Ed Sheeran are my most favorite US - UK artists of all time. Their collab - "Hearts' On Fire" - was a masterpiece.</p>
+				<div class="social-media pass-sm">
+					<a href="https://www.facebook.com/PassengerOfficial/" target="_blank"><i class="fab fa-facebook"></i></a>
+					<a href="https://www.instagram.com/passengermusic/" target="_blank"><i class="fab fa-instagram"></i></a>
+					<a href="https://www.youtube.com/user/passengermusic" target="_blank"><i class="fab fa-youtube"></i></a>
+					<a href="https://twitter.com/passengermusic" target="_blank"><i class="fab fa-twitter"></i></a>     
+				</div>
+			
+			</div>
+		</div>
+		
+		<div class="section" id="section5">
+	    	<video autoplay loop muted id="myVideo">
+                <source src="images/video5.mp4" type="video/mp4">   
+			</video>
+			<div class="layer">
+				<h3>BIGBANG</h3>
+				<p>The only band/artists I love in South Korean. Their music is great after all, no word can describe. Over ten years and they have been the pride of the Korean: Legends.</p>
+			
+				<div class="social-media bb-sm">
+					<a href="https://www.facebook.com/BIGBANG/" target="_blank"><i class="fab fa-facebook"></i></a>
+					<a href="https://www.instagram.com/bigbang_official/" target="_blank"><i class="fab fa-instagram"></i></a>
+					<a href="https://www.youtube.com/user/BIGBANG" target="_blank"><i class="fab fa-youtube"></i></a>
+					<a href="https://twitter.com/YG_GlobalVIP" target="_blank"><i class="fab fa-twitter"></i></a>     
+				</div>
+			</div>
+	    </div>
+	    
+	</div>
+
+</body>
+</html>
